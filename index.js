@@ -25,7 +25,7 @@ function App() {
         };
       });
     }, 1000);
-
+    
     localStorage.setItem("interval-id", intervalId);
     
     let timeoutId = setTimeout(() => {
@@ -34,7 +34,7 @@ function App() {
       setCurrTime(time);
       startBreak();
     }, currTime.session * 1000 + 500);
-
+    
     localStorage.setItem("timeout-id", timeoutId);
   }
 
@@ -69,24 +69,44 @@ function App() {
 
   return (
     <main>
-      <div className="button-wrapper">
-        <button onClick={() => {
-          if(isTicking) return;
-          setCurrTime(changeTime(mode, currTime, "+"));
-          setTime(changeTime(mode, time, "+"));
-        }}>Plus</button>
-        <button onClick={() => {
-          if(isTicking) return;
-          setMode(changeMode(mode));
-        }}>Mode</button>
-        <button onClick={() => {
-          if(isTicking) return;
-          setCurrTime(changeTime(mode, currTime, "-"));
-          setTime(changeTime(mode, Time, "-"));
-        }}>Minus</button>
+      <div className="top-buttons">
+        <div className="button-wrapper plus-button">
+          <button onClick={() => {
+            if(isTicking) return;
+            setCurrTime(changeTime(mode, currTime, "+"));
+            setTime(changeTime(mode, time, "+"));
+          }}>
+          </button>
+          <div className="button-neck"></div>
+          <p>Plus</p>
+        </div>
+        
+        <div className="button-wrapper mode-button">
+          <button onClick={() => {
+            if(isTicking) return;
+            setMode(changeMode(mode));
+          }}>
+          </button>
+          <div className="button-neck"></div>
+          <p>Mode</p>
+        </div>
+
+        <div className="button-wrapper minus-button">
+          <button onClick={() => {
+            if(isTicking) return;
+            setCurrTime(changeTime(mode, currTime, "-"));
+            setTime(changeTime(mode, time, "-"));
+          }}>
+          </button>
+          <div className="button-neck"></div>
+          <p>Minus</p>
+        </div>
       </div>
-      <h1>Title</h1>
+      
+      <img className="title-svg" src="./media/h1.svg" alt="title" />
+      
       <hr />
+      
       <div className="display-wrapper">
         <TimeDisplay title="session" time={currTime.session} mode={mode}/>
         <TimeDisplay title="break" time={currTime.break} mode={mode}/>
@@ -130,7 +150,7 @@ function App() {
 
 function TimeDisplay(props) {
   const classMode = props.title == props.mode ? " highlighted" : ""; 
-  const className = "display-wrapper" + classMode;
+  const className = "displays" + classMode;
 
   return (
     <div className={className}>

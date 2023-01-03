@@ -1,3 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700;900&display=swap');
+
+@font-face {
+  font-family: 'Casio';
+  src: url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot');
+  src: url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix')
+  ¦ ¦ format('embedded-opentype'),
+  ¦ url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2')
+  ¦ ¦ format('woff2'),
+  ¦ url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff')
+  ¦ ¦ format('woff'),
+  ¦ url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf')
+  ¦ ¦ format('truetype'),
+  ¦ url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7')
+  ¦ ¦ format('svg');
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Unbounded', cursive;
+}
+
+:root {
+  /* variables */
+}
+
+button {
+  border: none;
+  font-family: inherit
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: aqua;
+}
+
+main {
+  height: 300px;
+  width: 300px;
+  background: darkgrey;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button-wrapper {
+  margin: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.button-wrapper button {
+  height: 20px;
+  width: 50px;
+  border-radius: 3px;
+}
+
+.button-wrapper p {
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: 300;
+}
+
+.button-neck {
+  height: 12px;
+  width: 30px;
+  background: grey;
+  border-radius: 0 0 3px 3px;
+}
+
+.plus-button {
+  top: 22px;
+  transform: rotate(-48deg);
+}
+
+.mode-button {
+  top: -26px;
+}
+
+.minus-button {
+  top: 22px;
+  transform: rotate(48deg);
+}
+
+.title-svg {
+  height: 50px;
+}
+
+hr {
+  position: relative;
+  top: -10px;
+  width: 60px;
+}
+
+.display-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+}
+
+.displays {
+  border: 2px solid blue;
+  margin: 7px;
+  width: 110px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.display-title {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: uppercase;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background: darkgrey;
+  padding: 0 5px;
+}
+
+.display-time {
+  margin: 10px 0;
+  text-align: center;
+  font-family: "Casio", monospace;
+  font-size: 32px;
+  font-weight: 300;
+}
+
 .highlighted {
   border: 2px solid red;
 }
