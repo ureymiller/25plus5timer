@@ -101,7 +101,7 @@ main {
   height: 250px;
   width: 250px;
   position: relative;
-  top: -25px;
+  top: -20px;
   background: var(--medium-grey);
   border-radius: 50%;
   display: flex;
