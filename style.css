@@ -1,20 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700;900&display=swap');
-
-@font-face {
-  font-family: 'Casio';
-  src: url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot');
-  src: url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix')
-  ¦ ¦ format('embedded-opentype'),
-  ¦ url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2')
-  ¦ ¦ format('woff2'),
-  ¦ url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff')
-  ¦ ¦ format('woff'),
-  ¦ url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf')
-  ¦ ¦ format('truetype'),
-  ¦ url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7')
-  ¦ ¦ format('svg');
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
 * {
   padding: 0;
@@ -24,12 +9,18 @@
 }
 
 :root {
-  /* variables */
+  --dark-grey: #736f6c;
+  --medium-grey: #60626e;
+  --light-grey: #737277;
+  --black: #29222a;
+  --white: #f2ded5;
+  --display-grey: #aea996;
+  --display-font: #161928;
 }
 
 button {
   border: none;
-  font-family: inherit
+  font-family: inherit;
 }
 
 #root {
@@ -44,11 +35,12 @@ button {
 main {
   height: 300px;
   width: 300px;
-  background: darkgrey;
+  background: var(--black);
   border-radius: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: scale(1.5);
 }
 
 .top-buttons {
@@ -69,18 +61,25 @@ main {
   height: 20px;
   width: 50px;
   border-radius: 3px;
+  background: var(--dark-grey);
+}
+
+.button-pushed {
+  animation: pushed .5s;
 }
 
 .button-wrapper p {
-  margin-top: 5px;
-  font-size: 10px;
+  margin-top: 3px;
+  font-size: 8px;
   font-weight: 300;
+  text-transform: uppercase;
+  color: var(--white);
 }
 
 .button-neck {
   height: 12px;
   width: 30px;
-  background: grey;
+  background: var(--medium-grey);
   border-radius: 0 0 3px 3px;
 }
 
@@ -98,49 +97,103 @@ main {
   transform: rotate(48deg);
 }
 
+.inner-main {
+  height: 250px;
+  width: 250px;
+  position: relative;
+  top: -25px;
+  background: var(--medium-grey);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .title-svg {
-  height: 50px;
+  height: 40px;
+  margin-top: 15px;
 }
 
 hr {
   position: relative;
   top: -10px;
-  width: 60px;
+  width: 50px;
+  border: 1px solid var(--white);
 }
 
 .display-wrapper {
   display: flex;
   flex-direction: row;
   margin: 15px 0;
+  padding: 7px;
+  background: var(--black);
+  border-radius: 10px;
 }
 
 .displays {
-  border: 2px solid blue;
+  border: 1px solid var(--white);
   margin: 7px;
-  width: 110px;
+  width: 75px;
   border-radius: 5px;
   position: relative;
+  padding: 10px;
 }
 
 .display-title {
-  font-size: 12px;
+  font-size: 8px;
   font-weight: 300;
   text-transform: uppercase;
   position: absolute;
-  top: -10px;
-  left: 10px;
-  background: darkgrey;
+  top: -5px;
+  left: 5px;
+  background: var(--black);
   padding: 0 5px;
+  color: var(--white);
 }
 
 .display-time {
-  margin: 10px 0;
   text-align: center;
-  font-family: "Casio", monospace;
-  font-size: 32px;
+  padding: 5px;
+  font-family: 'Orbitron', monospace;
+  font-size: 12px;
   font-weight: 300;
+  background: var(--display-grey);
+  color: var(--display-font);
+}
+
+.controll-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-grey);
+  padding: 8px;
+  border-radius: 7px;
+}
+
+.controll-wrapper button {
+  margin: 0 5px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 7px;
+  font-weight: 300;
+  text-transform: uppercase;
+  background: var(--black);
+  color: var(--white);
 }
 
 .highlighted {
-  border: 2px solid red;
+  border: 1px solid red;
+}
+
+.creator {
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 300;
+  margin-top: 15px;
+  color: var(--white);
+}
+
+@keyframes pushed {
+  50% { transform: translateY(10px); }
 }
